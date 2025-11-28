@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApiEmpresa.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20251125040750_Migration1")]
-    partial class Migration1
+    [Migration("20251126135457_MigrationOne")]
+    partial class MigrationOne
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,6 +23,23 @@ namespace ApiEmpresa.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("ApiEmpresa.Models.City", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Cities");
+                });
 
             modelBuilder.Entity("ApiEmpresa.Models.Cliente", b =>
                 {
@@ -35,6 +52,9 @@ namespace ApiEmpresa.Migrations
                     b.Property<bool>("Estado")
                         .HasColumnType("bit");
 
+                    b.Property<int>("IdCity")
+                        .HasColumnType("int");
+
                     b.Property<string>("Nombre")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -45,7 +65,20 @@ namespace ApiEmpresa.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("IdCity");
+
                     b.ToTable("Clientes");
+                });
+
+            modelBuilder.Entity("ApiEmpresa.Models.Cliente", b =>
+                {
+                    b.HasOne("ApiEmpresa.Models.City", "City")
+                        .WithMany()
+                        .HasForeignKey("IdCity")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("City");
                 });
 #pragma warning restore 612, 618
         }

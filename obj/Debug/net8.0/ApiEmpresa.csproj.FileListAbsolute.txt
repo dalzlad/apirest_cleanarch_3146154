@@ -138,3 +138,4 @@ C:\Users\57302\sena\2025\trimestreIV\NET\3147913\ApiEmpresa\obj\Debug\net8.0\ref
 C:\Users\57302\sena\2025\trimestreIV\NET\3147913\ApiEmpresa\obj\Debug\net8.0\ApiEmpresa.pdb
 C:\Users\57302\sena\2025\trimestreIV\NET\3147913\ApiEmpresa\obj\Debug\net8.0\ApiEmpresa.genruntimeconfig.cache
 C:\Users\57302\sena\2025\trimestreIV\NET\3147913\ApiEmpresa\obj\Debug\net8.0\ref\ApiEmpresa.dll
+C:\Users\57302\sena\2025\trimestreIV\NET\3147913\ApiEmpresa\obj\Debug\net8.0\ApiEmpresa.sourcelink.json

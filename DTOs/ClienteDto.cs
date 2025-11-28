@@ -10,5 +10,8 @@ namespace ApiEmpresa.DTOs
         public string Whatsapp { get; set; } = "";
         [Required]
         public bool Estado { get; set; }
+
+        [Required]
+        public int IdCity { get; set; }
     }
 }

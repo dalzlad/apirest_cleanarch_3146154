@@ -176,6 +176,7 @@
       "ClienteDto": {
         "required": [
           "estado",
+          "idCity",
           "nombre",
           "whatsapp"
         ],
@@ -191,6 +192,10 @@
           },
           "estado": {
             "type": "boolean"
+          },
+          "idCity": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false

@@ -35,6 +35,7 @@ namespace ApiEmpresa.Repositories
             existing.Nombre = cliente.Nombre;
             existing.Whatsapp = cliente.Whatsapp;
             existing.Estado = cliente.Estado;
+            existing.IdCity = cliente.IdCity;
 
             await _context.SaveChangesAsync();
             return existing;

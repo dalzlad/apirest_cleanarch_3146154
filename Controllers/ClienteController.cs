@@ -40,7 +40,8 @@ namespace ApiEmpresa.Controllers
             {
                 Nombre = dto.Nombre,
                 Whatsapp = dto.Whatsapp,
-                Estado = dto.Estado
+                Estado = dto.Estado,
+                IdCity = dto.IdCity
             };
 
             var created = await _clienteRepository.AddAsync(newCliente);
@@ -58,6 +59,7 @@ namespace ApiEmpresa.Controllers
                 Nombre = dto.Nombre,
                 Whatsapp = dto.Whatsapp,
                 Estado = dto.Estado,
+                IdCity = dto.IdCity
             };
 
             var updated = await _clienteRepository.UpdateAsync(id, updateCliente);
